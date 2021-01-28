@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-import archs.wideresnet
+import archs.core.wideresnet
 
 
 class TestWideresnet:
@@ -18,9 +18,9 @@ class TestWideresnet:
         batch_size = standard_input.size(0)
 
         factories = [
-            archs.wideresnet.wideresnet16,
-            archs.wideresnet.wideresnet28,
-            archs.wideresnet.wideresnet40,
+            archs.core.wideresnet.wideresnet16,
+            archs.core.wideresnet.wideresnet28,
+            archs.core.wideresnet.wideresnet40,
         ]
         for factory in factories:
             arch = factory()

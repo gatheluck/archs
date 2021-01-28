@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-import archs.resnet
+import archs.core.resnet
 
 
 class TestResnet:
@@ -18,12 +18,12 @@ class TestResnet:
         batch_size = standard_input.size(0)
 
         factories = [
-            archs.resnet.resnet20,
-            archs.resnet.resnet32,
-            archs.resnet.resnet44,
-            archs.resnet.resnet56,
-            archs.resnet.resnet110,
-            archs.resnet.resnet1202,
+            archs.core.resnet.resnet20,
+            archs.core.resnet.resnet32,
+            archs.core.resnet.resnet44,
+            archs.core.resnet.resnet56,
+            archs.core.resnet.resnet110,
+            archs.core.resnet.resnet1202,
         ]
         for factory in factories:
             arch = factory()
