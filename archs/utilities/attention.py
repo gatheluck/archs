@@ -11,6 +11,7 @@ class MultiheadSelfAttention(nn.Module):
     This class is implementation of Multihead self-attention (MSA) module.
     If the num_heads = 1, the result is same as standard self attention.
     In each head, Scaled Dot-Product Attention is used.
+    Some parts of this code is borrowed from lucidrains/vit-pytorch repo: https://github.com/lucidrains/vit-pytorch.
 
     Note:
         Nortation for docstring and comments:
@@ -59,7 +60,7 @@ class MultiheadSelfAttention(nn.Module):
         Args:
             z (torch.Tensor): An input size of (B, N, D).
 
-        Rreturns:
+        Returns:
             torch.Tensor: An output size of (B, N, D).
 
         """
