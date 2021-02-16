@@ -45,6 +45,7 @@ class MultiheadSelfAttention(nn.Module):
             add_bias_qkv (bool): If True, add bias term to to_qkv.
 
         """
+        super().__init__()
         self.num_head: Final[int] = num_head
         self.scale: Final[float] = dim_head ** -0.5  # =sqrt(Dh)
 
@@ -67,7 +68,7 @@ class MultiheadSelfAttention(nn.Module):
             3, dim=-1
         )  # list of (B, N, num_head * dim_head)
         q, k, v = [
-            rearrange(t, "b n (h d) -> b h n d", h=self.num_heads) for t in qkv
+            rearrange(t, "b n (h d) -> b h n d", h=self.num_head) for t in qkv
         ]  # list of (B, num_head, N, dim_head)
 
         # Calulate attention weight in each head (Scaled Dot-Product Attention).
