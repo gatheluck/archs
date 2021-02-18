@@ -288,6 +288,18 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "timm"
+version = "0.3.4"
+description = "(Unofficial) PyTorch Image Models"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+torch = ">=1.4"
+torchvision = "*"
+
+[[package]]
 name = "toml"
 version = "0.10.2"
 description = "Python Library for Tom's Obvious, Minimal Language"
@@ -342,7 +354,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "41a57ec1825d645e5289580093fde1badd85eb1692ebb97be42633cbebf5c012"
+content-hash = "9d93d261a7828923286d81006ef9733e9d186fca55f770ade0b47ab790d3a69b"
 
 [metadata.files]
 appdirs = [
@@ -619,6 +631,10 @@ regex = [
     {file = "regex-2020.11.13-cp39-cp39-win32.whl", hash = "sha256:f8f295db00ef5f8bae530fc39af0b40486ca6068733fb860b42115052206466f"},
     {file = "regex-2020.11.13-cp39-cp39-win_amd64.whl", hash = "sha256:a15f64ae3a027b64496a71ab1f722355e570c3fac5ba2801cafce846bf5af01d"},
     {file = "regex-2020.11.13.tar.gz", hash = "sha256:83d6b356e116ca119db8e7c6fc2983289d87b27b3fac238cfe5dca529d884562"},
+]
+timm = [
+    {file = "timm-0.3.4-py3-none-any.whl", hash = "sha256:3977010be72183a9629d655ed96f1170690218b0c92faa082929241abf2373a2"},
+    {file = "timm-0.3.4.tar.gz", hash = "sha256:d55d82dacb9d76afbadb75f7c63ed310a14dc26d79fd4b3b05db0387fb1aec8f"},
 ]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
