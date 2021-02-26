@@ -4,7 +4,7 @@ import torch
 import archs.core.vit
 
 
-class TestResnet:
+class TestVit:
     @pytest.fixture
     def standard_input(self):
         batch_size = 16
