@@ -57,7 +57,9 @@ def vit_large16(pretrained: bool = False, num_classes: int = 1000) -> nn.Module:
     )
 
 
-def deit_base16(pretrained: bool = False, num_classes: int = 1000, distilled: bool = False):
+def deit_base16(
+    pretrained: bool = False, num_classes: int = 1000, distilled: bool = False
+):
     """DeiT-Base (DeiT-B/16).
 
     This function just call function in timm repo https://github.com/rwightman/pytorch-image-models (Apache License 2.0).
@@ -79,6 +81,12 @@ def deit_base16(pretrained: bool = False, num_classes: int = 1000, distilled: bo
 
     """
     if distilled:
-        return timm.create_model("vit_deit_base_distilled_patch16_224", pretrained=pretrained, num_classes=num_classes)
+        return timm.create_model(
+            "vit_deit_base_distilled_patch16_224",
+            pretrained=pretrained,
+            num_classes=num_classes,
+        )
     else:
-        return timm.create_model("vit_deit_base_patch16_224", pretrained=pretrained, num_classes=num_classes)
+        return timm.create_model(
+            "vit_deit_base_patch16_224", pretrained=pretrained, num_classes=num_classes
+        )
