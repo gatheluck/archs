@@ -4,7 +4,7 @@ import torch
 import archs.core.vit
 
 
-class TestResnet:
+class TestVit:
     @pytest.fixture
     def standard_input(self):
         batch_size = 16
@@ -17,7 +17,7 @@ class TestResnet:
     def test__standard_input(self, standard_input):
         batch_size = standard_input.size(0)
 
-        factories = [archs.core.vit.vit16]
+        factories = [archs.core.vit.vit_base16, archs.core.vit.vit_large16]
         for factory in factories:
             arch = factory()
             assert arch(standard_input).shape == torch.Size([batch_size, 1000])
